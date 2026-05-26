@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>你的名字 · 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+        }
+        /* 视频区域（可以是背景或内嵌） */
+        .video-section {
+            position: relative;
+            background: #000;
+            border-bottom: 5px solid #e63946;
+        }
+        .video-section video {
+            width: 100%;
+            display: block;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        /* 如果希望文字叠加在视频上，可以取消注释下面的代码 */
+        /*
+        .video-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0,0,0,0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        */
+        .info-section {
+            padding: 2rem 2rem 2.5rem;
+        }
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e293b, #2d3e50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.01em;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #e63946;
+            margin-top: 0.25rem;
+            font-weight: 500;
+            border-left: 4px solid #e63946;
+            padding-left: 1rem;
+        }
+        .desc {
+            margin: 1.5rem 0;
+            line-height: 1.6;
+            color: #334155;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 1rem;
+        }
+        .social-links a {
+            background: #f1f5f9;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+        .social-links a:hover {
+            background: #e63946;
+            color: white;
+            border-color: #e63946;
+            transform: translateY(-3px);
+        }
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #475569;
+            flex-wrap: wrap;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            background: #f8fafc;
+        }
+        @media (max-width: 640px) {
+            .info-section {
+                padding: 1.5rem;
+            }
+            .name {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 视频展示区（带播放控件） -->
+    <div class="video-section">
+        <video controls poster="https://via.placeholder.com/1100x500?text=Your+Video+Preview">
+            <!-- ⬇️ 请替换成你自己的视频地址（MP4） -->
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            您的浏览器不支持 video 标签。
+        </video>
+        <!-- 如果需要文字叠加在视频上，可以取消下面注释 -->
+        <!-- <div class="video-overlay">✨ 我的项目演示</div> -->
+    </div>
+
+    <!-- 个人信息区 -->
+    <div class="info-section">
+        <div class="name">陈晓明 <span style="font-size:1.8rem;">👋</span></div>
+        <div class="tagline">全栈开发者 · 开源贡献者 · 技术博主</div>
+        <div class="desc">
+            热爱构建优雅且实用的产品。有 5 年 React / Node.js 开发经验，目前专注于 AI 应用和开发者工具。
+            这个视频展示了我的一个开源项目 – 一个实时协作白板工具。
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/你的用户名" target="_blank">GitHub</a>
+            <a href="https://twitter.com/你的推特" target="_blank">𝕏 Twitter</a>
+            <a href="#" target="_blank">📝 技术博客</a>
+            <a href="#" target="_blank">📧 联系我</a>
+        </div>
+        <div class="stats">
+            <span>⭐ 12+ 开源项目</span>
+            <span>📦 1.2k GitHub Stars</span>
+            <span>🤝 30+ 贡献仓库</span>
+        </div>
+    </div>
+    <footer>
+        © 2026 li hr | 用 ❤️ 和 ☕ 构建
+    </footer>
+</div>
+</body>
+</html>
